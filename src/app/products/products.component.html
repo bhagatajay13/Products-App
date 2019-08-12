@@ -1,0 +1,19 @@
+
+<table>
+    <tr *ngFor = "let product of tvproduct">
+        <td width="30%">
+            <label [for]="product.caption">{{product.caption}}</label>
+        </td>
+        <td width="20%" *ngIf="product.type == 'bool'">
+            <input type="checkbox"/>
+        </td>
+        <td width="20%" *ngIf="product.type !== 'bool'">
+            <input [type]="product.type"/>
+        </td>
+        <td width="30%" *ngIf = "product.mandatory == true">
+            {{product.validationMessage}}
+        </td>
+         
+    </tr>
+</table>
+
